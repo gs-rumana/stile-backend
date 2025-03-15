@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('shipping_address_id')->references('addresses')->constrained();
-            $table->foreignId('billing_address_id')->references('addresses')->constrained();
+            $table->foreignId('shipping_address_id');
+            $table->foreignId('billing_address_id');
             $table->string('order_id');
             $table->double('total');
             $table->enum('status', [OrderStatus::Pending->value, OrderStatus::Processing->value, OrderStatus::Delivered->value, OrderStatus::Cancelled->value, OrderStatus::Failed->value, OrderStatus::Refunded->value, OrderStatus::Rejected->value, OrderStatus::AtLocalFacility->value, OrderStatus::OutForDelivery->value, OrderStatus::Confirmed->value, OrderStatus::Delivered->value])->default(OrderStatus::Pending->value);
