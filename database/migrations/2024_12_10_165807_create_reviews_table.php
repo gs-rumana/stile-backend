@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->enum('for', ['Product', 'Order'])->default('Product');
-            $table->foreignId('for_id')->nullable()->constrained();
+            $table->foreignId('for_id')->nullable();
             $table->integer('rating');
             $table->text('comment');
             $table->integer('upvotes')->default(0);
