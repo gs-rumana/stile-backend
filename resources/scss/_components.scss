@@ -1,0 +1,26 @@
+.card {
+    @extend .border-0, .rounded-5;
+}
+
+.btn {
+    @extend .shadow, .border-0, .rounded-5, .fw-medium;
+    &:not(.btn-sm):not(.btn-lg) {
+        @extend .px-4;
+    }
+}
+
+.form-control, .form-select {
+    @extend .rounded-5, .shadow-none;
+}
+
+.ql-toolbar {
+    @extend .rounded-top-5;
+}
+
+.ql-container {
+    @extend .rounded-bottom-5, .rounded-top-0;
+}
+
+.alert {
+    @extend .rounded-5;
+}

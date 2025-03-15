@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css");
+@import "perfect-scrollbar/css/perfect-scrollbar.css";
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import "./variables";
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+@import "./maps";
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+$utilities: (
+    "rounded": (
+  property: border-radius,
+  class: rounded,
+  values: (
+    null: $border-radius,
+    0: 0,
+    1: $border-radius-xs,
+    2: $border-radius-sm,
+    3: $border-radius,
+    4: $border-radius-lg,
+    5: $border-radius-xl,
+    6: $border-radius-xxl,
+    7: $border-radius-xxxl,
+    8: $border-radius-xxxxl,
+    circle: 50%,
+    pill: $border-radius-pill
+  )
+),
+"rounded-top": (
+  property: border-top-left-radius border-top-right-radius,
+  class: rounded-top,
+  values: (
+    null: $border-radius,
+    0: 0,
+    1: $border-radius-xs,
+    2: $border-radius-sm,
+    3: $border-radius,
+    4: $border-radius-lg,
+    5: $border-radius-xl,
+    6: $border-radius-xxl,
+    7: $border-radius-xxxl,
+    8: $border-radius-xxxxl,
+    circle: 50%,
+    pill: $border-radius-pill
+  )
+),
+"rounded-end": (
+  property: border-top-right-radius border-bottom-right-radius,
+  class: rounded-end,
+  values: (
+    null: $border-radius,
+    0: 0,
+    1: $border-radius-xs,
+    2: $border-radius-sm,
+    3: $border-radius,
+    4: $border-radius-lg,
+    5: $border-radius-xl,
+    6: $border-radius-xxl,
+    7: $border-radius-xxxl,
+    8: $border-radius-xxxxl,
+    circle: 50%,
+    pill: $border-radius-pill
+  )
+),
+"rounded-bottom": (
+  property: border-bottom-right-radius border-bottom-left-radius,
+  class: rounded-bottom,
+  values: (
+    null: $border-radius,
+    0: 0,
+    1: $border-radius-xs,
+    2: $border-radius-sm,
+    3: $border-radius,
+    4: $border-radius-lg,
+    5: $border-radius-xl,
+    6: $border-radius-xxl,
+    7: $border-radius-xxxl,
+    8: $border-radius-xxxxl,
+    circle: 50%,
+    pill: $border-radius-pill
+  )
+),
+"rounded-start": (
+  property: border-bottom-left-radius border-top-left-radius,
+  class: rounded-start,
+  values: (
+    null: $border-radius,
+    0: 0,
+    1: $border-radius-xs,
+    2: $border-radius-sm,
+    3: $border-radius,
+    4: $border-radius-lg,
+    5: $border-radius-xl,
+    6: $border-radius-xxl,
+    7: $border-radius-xxxl,
+    8: $border-radius-xxxxl,
+    circle: 50%,
+    pill: $border-radius-pill
+  )
+),
+);
+// 8. Add additional custom code here
+@import "bootstrap/scss/bootstrap";
+
+@import "./components";
+@import "./custom";
+@import "./remixicon.scss";

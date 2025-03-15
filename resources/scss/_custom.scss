@@ -1,0 +1,125 @@
+@property --rotation {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+body {
+    background-image: linear-gradient(var(--rotation), rgba($primary, 0.15) 0%, #ebedee 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(3rem);
+    height: 100vh;
+    animation: spin 10s linear infinite both;
+    font-family: Quicksand, sans-serif !important;
+}
+
+@keyframes spin {
+    100% {
+        --rotation: 360deg;
+    }
+}
+
+.shadow-primary {
+    box-shadow: 0 .5rem 1rem rgba($primary, .15);
+}
+
+#content {
+    position: relative;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        opacity: 0;
+    }
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.image-input {
+    @extend .form-control;
+    width: 100%;
+    // border: 2px dashed $primary;
+    // border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &.dragover {
+        border-color: $secondary;
+    }
+
+    .text {
+        color: $black;
+        text-align: center;
+    }
+}
+
+.input-row {
+    @extend .row, .mx-0, .bg-white, .p-3, .rounded-6, .align-items-center;
+
+    // border-radius: calc(1rem - 5px);
+    .form-label {
+        margin-bottom: 0 !important;
+    }
+
+    [class*="col-"] {
+        padding: 0;
+
+        // .form-control {
+        //     border-radius: calc(1rem - 6px) !important;
+        // }
+    }
+}
+
+.input-row.top {
+    @extend .rounded-top-6, .rounded-bottom-0;
+}
+
+.input-row.middle {
+    @extend .border-top, .border-bottom;
+    border-radius: 0 !important;
+}
+
+.input-row.bottom {
+    @extend .rounded-top-0, .rounded-bottom-6;
+}
+
+.blink {
+    animation: blink 0.5s linear 10 alternate both;
+}
+
+@keyframes blink {
+    from {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    to {
+        background-color: rgba(163, 207, 187, 0.6);
+    }
+}
+
+.tags-container:not(:empty) {
+    margin-bottom: 1rem;
+    @extend .px-2, .py-1, .d-flex, .gap-2, .w-100;
+    flex-wrap: wrap;
+}
+.tags-container:empty {
+    margin: 0 !important;
+}
+
+.mb-not-last:not(:last-child) {
+    @extend .mb-3;
+}
+
+.list-index:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+.list-index:first-child {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.list-index:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
